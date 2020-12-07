@@ -21,7 +21,7 @@ a, a:visited, a:link {
 
 a:hover {
   text-decoration: underline !important;
-  color: @color-button-hover !important;
+  color: @color-black !important;
 }
 
 h2 {
@@ -43,24 +43,39 @@ h3 {
     text-transform: uppercase;
     a {
       font-size: 10px;
+      color: @color-grey !important;
     }
     a:hover {
+      color: @color-white !important;
+    }
+    a:active {
+      color: @color-white !important;
+    }
+  }
+
+  #menuSelector {
+    a:hover {
+      color: @color-white !important;
+    }
+    a:active {
       color: @color-white !important;
     }
   }
 
   #search-box {
     background: darken(@color-primary, 10%);
-    padding-left: 0.5rem;
+    padding-left: 2.5rem;
     border-radius: 3px;
     border: 0;
     box-shadow: none;
-    color: @color-white;
+    color: @color-grey;
   }
 
-  .main-search__icon-leading {
-    display: none;
-  }
+}
+
+.yui-ac-bd li:hover {
+  background-color: @color-grey !important;
+  color: @color-white !important;
 }
 
 #breadcrumbs li:hover,
@@ -129,7 +144,7 @@ footer {
 #management-links {
   padding-left: 0 !important;
   a {
-    margin-right: 10px; 
+    margin-right: 10px;
     font-weight: 600;
   }
   tr {
@@ -225,8 +240,39 @@ td {
       background-color: @color-button-hover !important;
     }
     &:active {
-      color: @color-black !important;
+      color: @color-white !important;
       background-color: @color-button-active !important;
+      box-shadow: none;
+    }
+  }
+}
+
+#jenkins .yui-button {
+  button {
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .1s ease-out;
+    cursor: pointer;
+    border: none !important;
+    border-radius: 3px;
+    display: inline-block;
+    height: 36px;
+    outline: 0;
+    padding: 0 2rem;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+  }
+  &.danger button  {
+    color: @color-white !important;
+    background-color: @color-danger !important;
+
+    &:hover {
+      background-color: @color-danger-hover !important;
+    }
+    &:active {
+      color: @color-white !important;
+      background-color: @color-danger-active !important;
       box-shadow: none;
     }
   }
@@ -260,11 +306,6 @@ td {
   font-family:  @font-console, monospace !important;
 }
 
-.jenkins_ver:after {
-  margin-left: 15px;
-  content: 'neo2-theme @{version}'
-}
-
 [style^="color:gray"] {
   color: @color-grey !important;
 }
@@ -279,4 +320,13 @@ td {
     border-bottom: none !important;
     font-weight: lighter !important;
     margin-top: 2rem !important;
+}
+
+// Notification icon
+.am-monitor__count {
+     background-color: @color-red !important;
+}
+
+table.bigtable.sortable a.sortheader, table.bigtable.sortable span.sortarrow:hover, .tabBar .tab.active a:hover {
+  color: @color-white !important;
 }
